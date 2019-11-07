@@ -1,17 +1,24 @@
 import React from "react";
+import {
+  Card, CardImg, CardText, CardBody,
+  CardTitle, CardSubtitle
+} from 'reactstrap';
 
 const ImageCard = props => {
   return (
     <div className="mainContainer">
       <div className="cardTitle">
-        <h1>{props.title}</h1>
-        <h2>{props.date}</h2>
-        <p>{props.explanation}</p>
-      </div>
-      <div className="cardImage">
-        <img src={props.url} alt="Photo Of The Day"/>
-        
-      </div>
+        <Card>
+        <CardBody>
+          <CardTitle>{props.title}</CardTitle>
+          <CardSubtitle>{props.date}</CardSubtitle>
+          <CardText>{props.explanation}</CardText>
+        </CardBody>
+        <div className="cardImage">
+        <CardImg top width="100%" src={props.url} alt="Photo Of The Day" />
+        </div>
+      </Card>
+    </div>
     </div>
   );
 };
