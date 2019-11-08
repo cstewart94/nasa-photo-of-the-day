@@ -1,25 +1,31 @@
 import React from "react";
+import styled from "styled-components";
 import {
-  Card, CardImg, CardText, CardBody,
-  CardTitle, CardSubtitle
+  Card, CardImg
 } from 'reactstrap';
+
+const CardHolder = styled.div`
+width:100vw;
+height:100vh;
+position:fixed;
+top:1px;
+overflow:overlay;
+::-webkit-scrollbar{
+  color:black;
+}
+`
+const PicCard = styled.div`
+margin-top: -1%;
+width:100vw;
+`;
 
 const ImageCard = props => {
   return (
-    <div className="mainContainer">
-      <div className="cardTitle">
-        <Card>
-        <CardBody>
-          <CardTitle>{props.title}</CardTitle>
-          <CardSubtitle>{props.date}</CardSubtitle>
-          <CardText>{props.explanation}</CardText>
-        </CardBody>
-        <div className="cardImage">
-        <CardImg top width="100%" src={props.url} alt="Photo Of The Day" />
-        </div>
-      </Card>
-    </div>
-    </div>
+    <CardHolder>
+      <PicCard>
+        <CardImg top src={props.url} alt="Photo Of The Day" />
+      </PicCard>
+    </CardHolder>
   );
 };
 
