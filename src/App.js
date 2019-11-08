@@ -1,15 +1,13 @@
 import React from "react";
+import MainCard from "./components/MainCard";
 import "./App.css";
 
 function App() {
-  return (
+  return(
     <div className="App">
-      <p>
-        Read through the instructions in the README.md file to build your NASA
-        app! Have fun 🚀!
-      </p>
+      <MainCard/>
     </div>
-  );
+  )
 }
 
 export default App;
